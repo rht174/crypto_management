@@ -8,8 +8,6 @@ class Organization(models.Model):
     name = models.CharField(max_length=255, unique=True)
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="owned_organizations")
-    members = models.ManyToManyField(
-        User, related_name="organizations", blank=True)  # New field
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

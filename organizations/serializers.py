@@ -4,12 +4,10 @@ from .models import Organization
 
 
 class OrganizationSerializer(serializers.ModelSerializer):
-    members = serializers.PrimaryKeyRelatedField(
-        queryset=User.objects.all(), many=True, required=False)
 
     class Meta:
         model = Organization
-        fields = ["id", "name", "owner", "members", "created_at"]
+        fields = ["id", "name", "owner", "created_at"]
         read_only_fields = ["owner"]
 
     def create(self, validated_data):

@@ -6,7 +6,7 @@ from .serializers import CryptoPriceSerializer
 class CryptoPriceViewSet(viewsets.ModelViewSet):
     serializer_class = CryptoPriceSerializer
     permission_classes = [permissions.IsAuthenticated]
+    queryset = CryptoPrice.objects.all()
 
     def get_queryset(self):
-        # Users can only see their org's crypto data
-        return CryptoPrice.objects.filter(org__owner=self.request.user)
+        return CryptoPrice.objects.filter(org_id__owner=self.request.user)

@@ -1,0 +1,12 @@
+api_url = https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether,bnb,xrp,usdc,solana,cardano,avalanche,dogecoin,polkadot,chainlink,polygon,binance-usd,tron,dai,litecoin,uniswap,bitcoin-cash,stellar,monero,ethereum-classic,cosmos,filecoin,hedera,cronos,arbitrum,near,vechain,aave,algo,maker,graph,fantom,eos,decentraland,theta-token,flow,tezos,axie-infinity,iota,threshold,neo,kava,gala,celo,waves,compound&vs_currencies=usd
+
+
+
+# Terminal 1 - Start Celery worker
+celery -A crypto_management worker -l info
+
+# Terminal 2 - Start Celery beat
+celery -A crypto_management beat -l info
+
+
+sudo service redis-server start
