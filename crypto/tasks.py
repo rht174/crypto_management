@@ -53,8 +53,8 @@ def fetch_crypto_prices():
             if crypto_prices:
                 CryptoPrice.objects.bulk_create(crypto_prices)
 
-        return (f"Successfully updated {len(crypto_prices)} crypto prices "
-                f"across {len(organizations)} organizations")
+        return (f"Successfully recorded {len(crypto_prices)} historical crypto price entries "
+                f"for {len(organizations)} organizations at {current_time}")
 
     except requests.RequestException as e:
         return f"Error fetching crypto prices: {str(e)}"

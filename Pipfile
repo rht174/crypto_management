@@ -10,7 +10,7 @@ djangorestframework-simplejwt = "*"
 django-celery-beat = "*"
 autopep8 = "*"
 requests = "*"
-celery = "*"
 redis = "*"
+celery = "*"
 
 [dev-packages]
